@@ -31,6 +31,18 @@ def add_student():
 def view_students():
     if not students:
         print("No students found.")
+
+def search_student():
+    roll_no = input("Enter roll number to search: ")
+
+    for s in students:
+        if s["roll"] == roll_no:
+            print("\nStudent Found")
+            print(f"Name: {s['name']} | Roll: {s['roll']} | Marks: {s['marks']}")
+            return
+
+    print("Student not found")
+        
         return
 
     print("\n--- Student List ---")
@@ -60,3 +72,4 @@ while True:
     else:
 
         print("Invalid choice!")
+
