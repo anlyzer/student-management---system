@@ -31,6 +31,11 @@ def add_student():
 def view_students():
     if not students:
         print("No students found.")
+        return
+
+    print("\n--- Student List ---")
+    for s in students:
+        print(f"Name: {s['name']} | Roll: {s['roll']} | Marks: {s['marks']}")
 
 def search_student():
     roll_no = input("Enter roll number to search: ")
@@ -42,12 +47,6 @@ def search_student():
             return
 
     print("Student not found")
-        
-        return
-
-    print("\n--- Student List ---")
-    for s in students:
-        print(f"Name: {s['name']} | Roll: {s['roll']} | Marks: {s['marks']}")
 
 students = load_students()
 
@@ -72,4 +71,5 @@ while True:
     else:
 
         print("Invalid choice!")
+
 
